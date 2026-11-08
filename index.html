@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Miniproject AR - Poster Kampus</title>
+  <link rel="stylesheet" href="./src/styles.css">
+  
+  <!-- Peta impor: Three.js utama tetap lokal, addons ambil dari internet (CDN) -->
+  <script type="importmap">
+    { "imports": {
+        "three": "./vendor/three/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }}
+  </script>
+</head>
+<body>
+  <div id="bar">
+    <span id="status" data-state="idle">Belum dimulai</span>
+  </div>
+  
+  <div id="container"></div>
+  
+  <!-- Panel Info (Tampil saat target ketemu) -->
+  <div id="info-panel" style="display: none;">
+    <h2 id="info-title">Memuat...</h2>
+    <p id="info-desc"></p>
+  </div>
+
+  <!-- HUD Tombol di Bawah -->
+  <div id="hud" style="display: none;">
+    <button id="btn-action">Putar Animasi</button>
+  </div>
+
+  <div id="consent">
+    <div class="card">
+      <h1>AR Poster Hidup</h1>
+      <p>Arahkan kamera ke gambar target untuk melihat informasi.</p>
+      <button id="startBtn">Mulai Kamera</button>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
